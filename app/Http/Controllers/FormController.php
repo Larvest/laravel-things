@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormDataRequest;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -21,18 +22,21 @@ class FormController extends Controller
         return view('create3');
     }
 
-    public function store(Request $request)
+    public function store(FormDataRequest $request)
     {
-        $full_name      = $request->input('full_name');
-        $email          = $request->input('email');
-        $phone_number   = $request->input('phone_number');
+        $validated      = $request->validated();
+        $full_name      = $validated['full_name'];
+        $email          = $validated['email'];
+        $phone_number   = $validated['phone_number'];
 
-        return view('result', ['full_name' => $full_name, 'email' => $email, 'phone_number' => $phone_number]);
+        return view('result',   ['full_name'    => $full_name, 
+                                'email'         => $email, 
+                                'phone_number'  => $phone_number]);
     }
 
     public function store2(Request $request)
     {
-        $option      = $request->input('room');
+        $option    = $request->input('room');
         
         return view('result2', ['option' => $option]);
     }
@@ -45,11 +49,11 @@ class FormController extends Controller
         $payment   = $request->input('payment');
         $desc      = $request->input('desc');
         
-        return view('result3', ['name' => $name, 
-                                'place' => $place, 
-                                'date' => $date, 
-                                'payment' => $payment,
-                                'desc' => $desc
+        return view('result3', ['name'      => $name, 
+                                'place'     => $place, 
+                                'date'      => $date, 
+                                'payment'   => $payment,
+                                'desc'      => $desc
                                 ]);
     }
 }

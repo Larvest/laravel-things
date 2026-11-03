@@ -5,8 +5,8 @@ use App\Http\Controllers\FormController;
 
 //Route::get('/', [DBFetchController::class, 'showView'])->name('home');
 
-Route::get('/form1', [FormController::class, 'showForm']);
-Route::post('/result1', [FormController::class, 'store'])->name('store');
+Route::get('/form', [FormController::class, 'showForm'])->name('form1');
+Route::post('/result', [FormController::class, 'store'])->name('store');
 
 Route::get('/form2', [FormController::class, 'showForm2']);
 Route::post('/result2', [FormController::class, 'store2'])->name('store2');

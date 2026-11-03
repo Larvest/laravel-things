@@ -12,16 +12,25 @@
             ФИО:
             <input type="text" name="full_name">
         </label>
+        @error('full_name')
+            <p> {{ $message }} </p>
+        @enderror
         <br>
         <label>
             Телефон:
             <input type="text" name="phone_number">
         </label>
+        @error('phone')
+            <p> {{ $message }} </p>
+        @enderror
         <br>
         <label>
             Почта:
             <input type="text" name="email">
         </label>
+        @error('email')
+            <p> {{ $message }} </p>
+        @enderror
         <br>
         <button type="submit">Отправить</button>
     </form>
