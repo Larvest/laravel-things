@@ -1,3 +1,5 @@
+localhost/course-admin/courses
+
 ```bash
 git clone https://github.com/larvest/laravel-things.git &&
 cd laravel-things &&
