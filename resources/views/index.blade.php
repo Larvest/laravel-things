@@ -3,7 +3,8 @@
 @section('title', 'Заголовок страницы')
 
 @section('content')
-    <p>Основной контент страницы</p>
-
+    <h1>Основной контент страницы</h1>
+    <img src="{{ asset('img/sog.jpg') }}">
+    <button onclick="rent()">Забронировать</button>
     @endsection
 
